@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Coffee} from '../logic/coffee';
 
 @Component({
   selector: 'app-coffee',
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./coffee.component.css']
 })
 export class CoffeeComponent implements OnInit {
+  coffee: Coffee;
+  types = ['Espresso', 'Ristretto', 'Americano', 'Cappuccino', 'Frappe'];
 
   constructor() { }
 
   ngOnInit() {
+    this.coffee = new Coffee();
   }
 
 }
