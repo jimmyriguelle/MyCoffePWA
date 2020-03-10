@@ -10,6 +10,7 @@ import { ListComponent } from './list/list.component';
 import { CoffeeComponent } from './coffee/coffee.component';
 import {Routes, RouterModule} from '@angular/router';
 import {FormsModule} from '@angular/forms';
+import {MatSliderModule, MatSlideToggleModule} from '@angular/material';
 
 const routes: Routes = [
   {path: '', component: ListComponent},
@@ -29,6 +30,8 @@ const routes: Routes = [
     BrowserAnimationsModule,
     MaterialModule,
     FormsModule,
+    MatSliderModule,
+    MatSlideToggleModule,
   ],
   providers: [
     GeolocationService, DataService
