@@ -35,7 +35,7 @@
   </mat-slider>
 
   <mat-card-subtitle>
-    <mat-slide-toggle #tastingSelector>Tasting Ratings</mat-slide-toggle>
+    <mat-slide-toggle #tastingSelector (change)="tastingRatingChanged(tastingSelector.checked)">Tasting Ratings</mat-slide-toggle>
   </mat-card-subtitle>
 
 
@@ -66,6 +66,11 @@
   <textarea matInput placeholder="Notes" name="notes" [(ngModel)]="coffee.notes">
   </textarea>
   </mat-form-field>
+</mat-card>
+
+<mat-card>
+  <button mat-raised-button (click)="cancel()">Cancel</button>
+  <button mat-raised-button color="accent" (click)="save()">Save</button>
 </mat-card>
 
 
