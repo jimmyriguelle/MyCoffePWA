@@ -7,6 +7,8 @@ export class Coffee {
   rating: number;
   notes: string;
   tastingRating: TastingRating;
+  // tslint:disable-next-line:variable-name
+  _id: string;
 
   constructor(public name: string = '',
               public place: string = '',

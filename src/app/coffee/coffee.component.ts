@@ -12,6 +12,7 @@ import {DataService} from '../data.service';
 })
 export class CoffeeComponent implements OnInit {
   coffee: Coffee;
+  tastingEnable = false;
   types = ['Espresso', 'Ristretto', 'Americano', 'Cappuccino', 'Frappe'];
 
   constructor(private route: ActivatedRoute,
@@ -43,6 +44,16 @@ export class CoffeeComponent implements OnInit {
     this.routingSubscription =
       this.route.params.subscribe(params => {
         console.log(params["id"]);
+        if (params["id"]) {
+          // @ts-ignore
+          // tslint:disable-next-line:no-unused-expression
+          this.data.get(params["id"]), response => {
+            this.coffee = response;
+            if (this.coffee.tastingRating) {
+              this.tastingEnable = true;
+            }
+          };
+        }
       });
 
     this.geolocation.requestLocation(location => {
