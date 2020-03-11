@@ -11,7 +11,7 @@ import { CoffeeComponent } from './coffee/coffee.component';
 import {Routes, RouterModule} from '@angular/router';
 import {FormsModule} from '@angular/forms';
 import {MatSliderModule, MatSlideToggleModule} from '@angular/material';
-import {HttpClientJsonpModule, HttpClientModule} from '@angular/common/http';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
 
 const routes: Routes = [
   {path: '', component: ListComponent},
