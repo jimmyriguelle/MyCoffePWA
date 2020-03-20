@@ -12,6 +12,8 @@ import {Routes, RouterModule} from '@angular/router';
 import {FormsModule} from '@angular/forms';
 import {MatSliderModule, MatSlideToggleModule} from '@angular/material';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 const routes: Routes = [
   {path: '', component: ListComponent},
@@ -34,6 +36,7 @@ const routes: Routes = [
     HttpClientModule,
     MatSliderModule,
     MatSlideToggleModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],
   providers: [
     GeolocationService, DataService
